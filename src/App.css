@@ -1,0 +1,284 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9fc;
+  color: #333;
+  line-height: 1.5;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* App Container */
+.app {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.app:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 15px;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Form Section */
+.form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form input,
+.form select,
+.form button {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f4f4f9;
+  transition: all 0.3s ease;
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #eef6ff;
+}
+
+.form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}
+
+/* Search Bar */
+.search-bar {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f4f4f9;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+  background-color: #eef6ff;
+}
+
+/* Transactions Section */
+.transactions {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.transaction:hover {
+  background-color: #f1f1f1;
+}
+
+.transaction.give {
+  border-left: 5px solid #ff6b6b;
+}
+
+.transaction.take {
+  border-left: 5px solid #51cf66;
+}
+
+/* Buttons in Transactions */
+.transaction .edit-btn,
+.transaction .delete-btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.transaction .edit-btn {
+  background-color: #ffc107;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.transaction .edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.transaction .delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.transaction .delete-btn:hover {
+  background-color: #b52b3d;
+}
+
+/* Totals Section */
+.totals {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.totals h3 {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.pdf-button,
+.clear-button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.pdf-button:hover {
+  background-color: #218838;
+}
+
+.clear-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.clear-button:hover {
+  background-color: #c82333;
+}
+
+/* Sorting Section */
+.sort-options {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.sort-options button {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sort-options button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.sort-options button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+  .transaction {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .transaction .edit-btn,
+  .transaction .delete-btn {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .transaction {
+    padding: 8px;
+  }
+
+  .transaction .edit-btn,
+  .transaction .delete-btn {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .pdf-button,
+  .clear-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
